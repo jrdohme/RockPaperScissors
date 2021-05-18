@@ -2,7 +2,9 @@ function computerPlay(){
 
     var random = Math.random() * 2;
 
-    random = Math.ceil();
+    random = Math.round(random);
+
+    console.log(random);
 
     if (random == 0) {
         return "Rock";
@@ -17,30 +19,31 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection){
     //code
 
-    playerSelection.toLowerCase();
-    computerSelection.toLowerCase();
+    playerSelectionL = playerSelection.toLowerCase();
+    computerSelectionL = computerSelection.toLowerCase();
+    console.log(computerSelectionL);
     
-    if (playerSelection == "Rock"){
-        if (computerSelection == "Paper"){
+    if (playerSelectionL == "rock"){
+        if (computerSelectionL == "paper"){
             return "Computer Wins! Paper beats Rock";
-        }else if (computerSelection == "Scissors"){
+        }else if (computerSelectionL == "scissors"){
             return "You win! Rock beats Scissors";
         } else {
             return "Tie Rock and Rock";
         }
 
-    }else if (playerSelection == "Paper"){
-        if(computerSelection == "Rock"){
+    }else if (playerSelectionL == "paper"){
+        if(computerSelectionL == "rock"){
             return "You Win! Paper beats Rock";
-        }else if(computerSelection == "Scissors"){
+        }else if(computerSelectionL == "scissors"){
             return " Computer Wins! Scissors beats Paper";
         }else {
             return "Tie Paper and Paper";
         }
-    }else if (playerSelection == "Scissors"){
-        if(computerSelection == "Rock"){
+    }else if (playerSelectionL == "scissors"){
+        if(computerSelectionL == "rock"){
             return "Computer Wins! Rock beats Scissors";
-        }else if(computerSelection == "Paper"){
+        }else if(computerSelectionL == "paper"){
             return " You Win! Scissors beats Paper";
         }else {
             return "Tie Scissors and Scissors";
