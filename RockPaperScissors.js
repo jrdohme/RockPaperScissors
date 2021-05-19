@@ -68,7 +68,7 @@ function game(){
     var roundResult;
     
     const playerSelection = "Rock";
-    for (x=0;x < 4;x++){
+    for (x=0;x < 5;x++){
         
         const computerSelection = computerPlay();
 
@@ -77,7 +77,7 @@ function game(){
         if (roundResult == 0){
             console.log("You Lose!" + computerSelection + " beats " + playerSelection);
             computerScore++;
-        }else if(roundResult = 1){
+        }else if(roundResult == 1){
             console.log("You Win!" + playerSelection + " beats " + computerSelection);
             playerScore++;
         }else{
