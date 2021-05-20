@@ -1,4 +1,6 @@
 const buttons = document.querySelectorAll('input')
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay(){
 
@@ -65,8 +67,7 @@ function playRound(playerSelection, computerSelection){
 function game(playerSelection){
 
     var x;
-    var playerScore;
-    var computerScore;
+
     var roundResult;
     let result = 'test'
     
@@ -102,6 +103,7 @@ function game(playerSelection){
             result = "Tie Game!";
         }
     }
+
     document.getElementById('result').innerHTML = result
 }
 
