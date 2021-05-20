@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll('input')
+
 function computerPlay(){
 
     var random = Math.random() * 2;
@@ -60,15 +62,16 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
+function game(playerSelection){
 
     var x;
-    var playerScore = 0;
-    var computerScore = 0;
+    var playerScore;
+    var computerScore;
     var roundResult;
+    let result = 'test'
     
-    const playerSelection = "Rock";
-    for (x=0;x < 5;x++){
+    
+    //for (x=0;x < 5;x++){
         
         const computerSelection = computerPlay();
 
@@ -77,26 +80,37 @@ function game(){
         if (roundResult == 0){
             console.log("You Lose!" + computerSelection + " beats " + playerSelection);
             computerScore++;
+            result = "You Lose!" + computerSelection + " beats " + playerSelection + "Player: " + playerScore + " , Computer: " + computerScore;
         }else if(roundResult == 1){
             console.log("You Win!" + playerSelection + " beats " + computerSelection);
             playerScore++;
+            result = "You Win!" + playerSelection + " beats " + computerSelection + "Player: " + playerScore + " , Computer: " + computerScore;
         }else{
             console.log("Tie");
+            result = "Tie, Player: " + playerScore + " , Computer: " + computerScore;
+        }
+    //}
+    if(computerScore == 5 || playerScore ==5){
+        if (computerScore > playerScore){
+            console.log("You Lose!" + computerScore + " to " + playerScore);
+            result = "You Lose!" + computerScore + " to " + playerScore;
+        }else if(playerScore > computerScore){
+            console.log("You Win!" + playerScore + " to " + computerScore);
+            result = "You Win!" + playerScore + " to " + computerScore;
+        }else{
+            console.log("Tie Game!")
+            result = "Tie Game!";
         }
     }
-
-    if (computerScore > playerScore){
-        console.log("You Lose!" + computerScore + " to " + playerScore);
-
-    }else if(playerScore > computerScore){
-        console.log("You Win!" + playerScore + " to " + computerScore);
-
-    }else{
-        console.log("Tie Game!")
-    }
+    document.getElementById('result').innerHTML = result
 }
 
-game();
+//game();
+buttons.forEach(button =>{
+    button.addEventListener('click',function(){
+        game(button.value);
+    })
+})
 //const playerSelection = "rock";
 //const computerSelection = computerPlay();
 //console.log(computerSelection);
