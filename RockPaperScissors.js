@@ -81,11 +81,11 @@ function game(playerSelection){
         if (roundResult == 0){
             console.log("You Lose!" + computerSelection + " beats " + playerSelection);
             computerScore++;
-            result = "You Lose!" + computerSelection + " beats " + playerSelection + "Player: " + playerScore + " , Computer: " + computerScore;
+            result = "You Lose!" + computerSelection + " beats " + playerSelection + " Player: " + playerScore + " , Computer: " + computerScore;
         }else if(roundResult == 1){
             console.log("You Win!" + playerSelection + " beats " + computerSelection);
             playerScore++;
-            result = "You Win!" + playerSelection + " beats " + computerSelection + "Player: " + playerScore + " , Computer: " + computerScore;
+            result = "You Win!" + playerSelection + " beats " + computerSelection + " Player: " + playerScore + " , Computer: " + computerScore;
         }else{
             console.log("Tie");
             result = "Tie, Player: " + playerScore + " , Computer: " + computerScore;
